@@ -13,3 +13,11 @@
 
 アプリ作成  
 `rails new customermanagement -d mysql --skip-test-unit`
+
+Gemファイルに書いたパッケージをインストール    
+`bundle`
+
+Gemパッケージリスト表示  
+`bundle list`
+
+
