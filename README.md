@@ -1,5 +1,6 @@
-# RoRCustomerManagement
-##学習メモ
+# RoRCustomerManagement(学習メモ)
+
+## vagrant
 
 共有ディレクトリ
 
@@ -11,6 +12,8 @@
 
 接続  
 `vagrant ssh`
+
+## Rails
 
 アプリ作成  
 `rails new customermanagement -d mysql --skip-test-unit`
@@ -63,4 +66,16 @@ rails g controller staff/top
 rails g controller admin/top
 rails g controller customer/top
 ```
+
+アセットのプリコンパイル  
+(public/assetsディレクトリにapp/assetsのjs,cssがマージされたものができる)
+
+`rake assets:precompile`
+
+サーバ起動  
+`rails s`
+
+本番用  
+`rails s -e production`
+
 
