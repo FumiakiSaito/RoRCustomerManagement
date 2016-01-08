@@ -23,3 +23,6 @@ Gemパッケージリスト表示
 database.ymlを元にDB作成  
 `rake db:create`
 
+rpecインストール  
+`rails g rspec:install`
+
