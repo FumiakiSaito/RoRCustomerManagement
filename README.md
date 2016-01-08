@@ -79,4 +79,10 @@ rails g controller errors
 本番用  
 `rails s -e production`
 
+モデルに関する各種スケルトン作成  
+`rails g model StaffMember`
+
+スケルトン削除  
+`rails destroy model StafffMember`
+
 
