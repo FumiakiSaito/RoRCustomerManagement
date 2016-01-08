@@ -20,4 +20,6 @@ Gemファイルに書いたパッケージをインストール
 Gemパッケージリスト表示  
 `bundle list`
 
+database.ymlを元にDB作成  
+`rake db:create`
 
