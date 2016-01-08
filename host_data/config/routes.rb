@@ -16,10 +16,10 @@ Rails.application.routes.draw do
     end
 
     # ルートにリクエストされた場合の設定
-    root 'errors#routeing_error'
+    root 'errors#not_found'
 
     # 全てのルーティングに合致しなかった場合の設定
-    get '*anitying' => 'erros#routing_error'
+    get '*anything' => 'errors#not_found'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

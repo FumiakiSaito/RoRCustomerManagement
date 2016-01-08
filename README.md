@@ -65,6 +65,7 @@ config/routes.rb
 rails g controller staff/top
 rails g controller admin/top
 rails g controller customer/top
+rails g controller errors
 ```
 
 アセットのプリコンパイル  
