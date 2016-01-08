@@ -1,4 +1,5 @@
 # RoRCustomerManagement
+##学習メモ
 
 共有ディレクトリ
 
@@ -33,3 +34,33 @@ specディレクトリ配下に任意のディレクトリ・ファイルを配�
 
 specディレクトリ配下全てのspecファイルを実行  
 `rspec spec`
+
+
+ルーティング設定  
+config/routes.rb
+
+```
+    # 職員向け
+    namespace :staff do
+        root 'top#index'
+    end
+
+    # 管理者向け
+    namespace :admin do
+        root 'top#index'
+    end
+
+    # 顧客向け
+    namespace :customer do
+        root 'top#index'
+    end
+```
+
+コントローラとアクションの作成
+
+```
+rails g controller staff/top
+rails g controller admin/top
+rails g controller customer/top
+```
+

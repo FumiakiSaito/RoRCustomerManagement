@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+
+    # 職員向け
+    namespace :staff do
+        root 'top#index'
+    end
+
+    # 管理者向け
+    namespace :admin do
+        root 'top#index'
+    end
+
+    # 顧客向け
+    namespace :customer do
+        root 'top#index'
+    end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
