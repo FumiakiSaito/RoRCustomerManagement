@@ -26,3 +26,10 @@ database.ymlを元にDB作成
 rpecインストール  
 `rails g rspec:install`
 
+rspec実行  
+
+specディレクトリ配下に任意のディレクトリ・ファイルを配置しrpecを実行  
+例：`rspec spec/experiments/string_spec.rb`
+
+specディレクトリ配下全てのspecファイルを実行  
+`rspec spec`
