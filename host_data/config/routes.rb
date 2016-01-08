@@ -14,6 +14,12 @@ Rails.application.routes.draw do
     namespace :customer do
         root 'top#index'
     end
+
+    # ルートにリクエストされた場合の設定
+    root 'errors#routeing_error'
+
+    # 全てのルーティングに合致しなかった場合の設定
+    get '*anitying' => 'erros#routing_error'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

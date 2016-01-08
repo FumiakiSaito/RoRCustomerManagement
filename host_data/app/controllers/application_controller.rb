@@ -6,8 +6,15 @@ class ApplicationController < ActionController::Base
   # レイアウトを決定するメソッドを指定
   layout :set_layout
 
+  class Forbidden < ActionController::ActionControllerError; end
+  class IpAddressRejected < ActionController::ActionControllerError; end
+
   # コントローラ内で例外が発生した時に処理するメソッドを指定
   rescue_from Exception, with: :rescue500
+  rescue_from Forbidden, with: :rescue403
+  rescue_from IpAddressRejected, with: :rescue403
+
+
 
   # URLのコントローラ名でレイアウトを決定する
   private
@@ -20,6 +27,11 @@ class ApplicationController < ActionController::Base
   end
 
   # コントローラ内で例外が発生した時の処理
+  def rescue403(e)
+    @exception = e
+    render 'errors/forbidden', status: 403
+  end
+
   def rescue500(e)
     @exception = e
     render 'errors/internal_server_error', status: 500
