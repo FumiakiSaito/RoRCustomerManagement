@@ -19,10 +19,10 @@ class Staff::SessionsController < Staff::Base
       staff_member = StaffMember.find_by(email_for_index: @form.email.downcase)
     end
 
-    # 存在していたらセッションに保存しトップへ
-    if staff_member
+    # 認証
+    if Staff::Authenticator.new(staff_member).authenticate(@form.password)
       session[:staff_member_id] = staff_member.id
-      redirect_to :staff_root
+      redirect_to : staff_root
     else
       render action: 'new'
     end
