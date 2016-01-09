@@ -71,6 +71,7 @@ rails g controller staff/top
 rails g controller admin/top
 rails g controller customer/top
 rails g controller errors
+rails g controller staff/sessions
 ```
 
 アセットのプリコンパイル  
@@ -154,6 +155,8 @@ db/seeds/以下のファイルを元にシードデータ投入
 データベースを作り直しシードデータ投入  
 
 `rake db:reset`
+
+###コントローラ
 
 
 
