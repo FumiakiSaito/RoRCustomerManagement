@@ -28,6 +28,9 @@ module Customermanagement
         g.controller_specs false
         g.view_specs false
     end
+
+    # 一時的にStrong Parametersを無効にする
+    config.action_controller.permit_all_parameters = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

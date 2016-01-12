@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   class IpAddressRejected < ActionController::ActionControllerError; end
 
   # ErrorHandlers(concerns/error_handlers.rb)読み込み
-  #include ErrorHandlers if Rails.env.production? # 本番のみエラー画面を有効にする
-  include ErrorHandlers
+  include ErrorHandlers if Rails.env.production? # 本番のみエラー画面を有効にする
+  #include ErrorHandlers
 
   # URLのコントローラ名でレイアウトを決定する
   private

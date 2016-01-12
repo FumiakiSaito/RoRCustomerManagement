@@ -1,5 +1,5 @@
 <header>
-  <span class="logo-mark">顧客管理システム</span>
+  <%= link_to '顧客管理システム', :staff_root, class: 'logo-mark' %>
   <%= content_tag(:span, flash.notice, class: 'notice') if flash.notice %>
   <%= content_tag(:span, flash.alert, class: 'alert') if flash.alert %>
   <%=
