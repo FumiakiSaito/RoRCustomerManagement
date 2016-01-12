@@ -1,4 +1,8 @@
 class Admin::TopController < Admin::Base
+
+  # 認証しない
+  skip_before_action :authorize
+
   def index
     if current_administrator
       render action: 'dashboard'
