@@ -1,4 +1,4 @@
-re 'rails_helper'
+require 'rails_helper'
 
 # attributes_forはFactory Girlのメソッド
 # factories/staff_member.rbで得られるハッシュをparams_hashに保存(メモ化)
@@ -37,6 +37,5 @@ describe Admin::StaffMembersController do
         patch :update, id: staff_member.id, staff_member: params_hash
       }.not_to change { staff_member.hashed_password.to_s}
     end
-
   end
 end
