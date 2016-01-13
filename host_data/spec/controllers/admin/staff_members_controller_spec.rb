@@ -1,9 +1,19 @@
 require 'rails_helper'
 
+describe Admin::StaffMembersController, 'ログイン前' do
+  # support/shared_examples_for_admin_controllersの共有エグザンプルを取り込む
+  it_behaves_like 'a protected admin controller'
+end
+
 # attributes_forはFactory Girlのメソッド
 # factories/staff_member.rbで得られるハッシュをparams_hashに保存(メモ化)
 describe Admin::StaffMembersController do
   let(:params_hash) { attributes_for(:staff_member) }
+  let(:administrator) { create(:administrator) }
+
+  before do
+    session[:administrator_id] = administrator.id
+  end
 
   describe '#create' do
     example '職員一覧ページにリダイレクト' do
@@ -11,17 +21,15 @@ describe Admin::StaffMembersController do
       expect(response).to redirect_to(admin_staff_members_url)
     end
 
-    exmple '例外ActionController::ParameterMissingが発生' do
-      # 例外を無効化
+    example '例外ActionController::ParameterMissingが発生' do
       bypass_rescue
       expect { post :create }.
         to raise_error(ActionController::ParameterMissing)
     end
   end
 
-
   describe '#update' do
-    let(:staff_member) { create(:staff_member)}
+    let(:staff_member) { create(:staff_member) }
 
     example 'suspendedフラグをセットする' do
       params_hash.merge!(suspended: true)
@@ -35,7 +43,7 @@ describe Admin::StaffMembersController do
       params_hash.merge!(hashed_password: 'x')
       expect {
         patch :update, id: staff_member.id, staff_member: params_hash
-      }.not_to change { staff_member.hashed_password.to_s}
+      }.not_to change { staff_member.hashed_password.to_s }
     end
   end
 end
