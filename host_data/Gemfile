@@ -51,6 +51,9 @@ gem 'foreigner', '~> 1.6.1'
 # ページネーション
 gem 'kaminari', '~> 0.15.1'
 
+gem 'date_validator', '~> 0.7.0'
+gem 'email_validator', '~> 1.4.0'
+
 group :test do
     # Rspecを取り込む
     gem 'rspec-rails', '~> 3.0.0.beta2'

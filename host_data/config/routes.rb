@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
           # 単数リソース(ただし自分自身が登録、削除する機能は不要なのでexceptで除外する)
           resource :account, except: [ :new, :create, :destroy]
+
+          resource :password, only: [ :show, :edit, :update ]
       end
     end
 
