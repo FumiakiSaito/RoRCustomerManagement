@@ -38,7 +38,12 @@ Rails.application.routes.draw do
           delete 'staff_members/:id'      => 'staff_members#destroy'
 =end
           # ↑同様(複数リソース)
-          resources :staff_members
+          resources :staff_members do
+            # ネストされたリソース
+            # admin/staff_members/:staff_member_id/staff_events::indexが設定される
+            resources :staff_events, only: [ :index ]
+          end
+          resources :staff_events, only: [ :index ]
       end
     end
 

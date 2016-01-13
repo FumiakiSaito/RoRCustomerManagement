@@ -46,6 +46,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'nokogiri', '~> 1.6.1'
 # 翻訳ファイル
 gem 'rails-i18n', '~> 4.0.1'
+# 外部キー制約
+gem 'foreigner', '~> 1.6.1'
 
 group :test do
     # Rspecを取り込む
