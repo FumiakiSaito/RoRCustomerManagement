@@ -156,7 +156,28 @@ db/seeds/以下のファイルを元にシードデータ投入
 
 `rake db:reset`
 
-###コントローラ
+
+###kaminari(ページネーションのパッケージ)
+
+Gemfile  
+
+```
+gem 'kaminari', '~> 0.15.1'
+```
+
+Gemパッケージインストール
+
+```
+bundle
+```
+
+設定ファイル、ERBテンプレート生成
+
+```
+rails g kaminari:config
+rails g kaminari:views default
+```
+
 
 
 
